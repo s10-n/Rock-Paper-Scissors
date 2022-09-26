@@ -68,7 +68,7 @@
 
         function playRound(playerSelection, computerSelection) {
             // Clean up player input
-            playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
+            playerSelection = cleanUpInput(playerSelection);
             // Check if the round is a tie
             if (playerSelection === computerSelection) {
                 // If it's a tie:
