@@ -24,7 +24,20 @@
         // If move 1 beats move 2, return true
         // If move 2 beats move 1, return false
         function selectWinner(move1, move2){
-
+            // If move 1 is Rock:
+            // Scissors returns True, paper returns false
+            if (move1 === "Rock") {
+                if (move2 === "Scissors") {
+                    return True;
+                }
+                else if (move2 === "Paper") {
+                    return False;
+                }
+            }
+            // If move 1 is Paper:
+            // Rock returns True, scissors returns false
+            // If move 1 is Scissors:
+            // Paper returns True, rock returns false
 }
 
         // Create a function that plays a single round of Rock Paper Scissors
