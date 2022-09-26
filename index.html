@@ -28,16 +28,32 @@
             // Scissors returns True, paper returns false
             if (move1 === "Rock") {
                 if (move2 === "Scissors") {
-                    return True;
+                    return true;
                 }
                 else if (move2 === "Paper") {
-                    return False;
+                    return false;
                 }
             }
             // If move 1 is Paper:
             // Rock returns True, scissors returns false
+            if (move1 === "Paper") {
+                if (move2 === "Rock") {
+                    return true;
+                }
+                else if (move2 === "Scissors") {
+                    return false;
+                }
+            }
             // If move 1 is Scissors:
             // Paper returns True, rock returns false
+            if (move1 === "Scissors") {
+                if (move2 === "Paper") {
+                    return true;
+                }
+                else if (move2 === "Rock") {
+                    return false;
+                }
+            }
 }
 
         // Create a function that plays a single round of Rock Paper Scissors
