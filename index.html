@@ -74,13 +74,14 @@
             else if (playerSelection === "Rock" ||
                     playerSelection === "Paper" ||
                     playerSelection === "Scissors") {
-            // Judge what the winning move is
-            // Return the results        
+                // Judge what the winning move is
+                // Return the results
+                return "Valid."
             }
             // If the player didn't play Rock, Paper, or Scissors:
             // Return an "Invalid move" message    
             else {
-                
+                return `"${playerSelection}"" isn't a valid move. Try "Rock," "Paper," or "Scissors."`
             }
         }
     </script>
