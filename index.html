@@ -56,6 +56,12 @@
             }
         }
         
+        // Create a function that cleans up player input
+        function cleanUpInput(playerSelection) {
+            // Capitalize the first letter, then make the rest lowercase
+            return playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
+        }
+
         // Create a function that plays a single round of Rock Paper Scissors
         // function takes a player selection and computer selection,
         // then returns a string declaring the winner and winning move
