@@ -54,7 +54,7 @@
                     return false;
                 }
             }
-}
+        }
 
         // Create a function that plays a single round of Rock Paper Scissors
         // function takes a player selection and computer selection,
@@ -63,18 +63,23 @@
         function playRound(playerSelection, computerSelection) {
             // Clean up player input
             playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
+            // Check if the round is a tie
+            if (playerSelection === computerSelection) {
+                // If it's a tie:
+                // Return "It's a tie!" message
+            }
+            // If not a tie:
             // Make sure that player has provided a valid input
-            if (playerSelection === "Rock" ||
-                playerSelection === "Paper" ||
-                playerSelection === "Scissors") {
-                    // If valid:
-                                        
-                    // Judge what the winning move is
-                    // Return the results
-                }
+            else if (playerSelection === "Rock" ||
+                    playerSelection === "Paper" ||
+                    playerSelection === "Scissors") {
+            // Judge what the winning move is
+            // Return the results        
+            }
+            // If the player didn't play Rock, Paper, or Scissors:
+            // Return an "Invalid move" message    
             else {
-                // If invalid:
-                // Return an "Invalid move" message
+                
             }
         }
     </script>
