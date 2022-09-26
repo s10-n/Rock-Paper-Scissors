@@ -63,16 +63,25 @@
         }
 
         // Create a function that plays a single round of Rock Paper Scissors
-        // function takes a player selection and computer selection,
-        // then returns a string declaring the winner and winning move
+        // function takes a player selection and computer selection
+        // If the move is invalid (not Rock, Paper, or Scissors):
+            // function returns false
+        // Otherwise: 
+            // Returns a string declaring the winner and winning move
 
         function playRound(playerSelection, computerSelection) {
             // Clean up player input
             playerSelection = cleanUpInput(playerSelection);
             // Make sure that player has provided a valid input
-            else if (playerSelection === "Rock" ||
-                    playerSelection === "Paper" ||
-                    playerSelection === "Scissors") {
+            // If player entered anything other than Rock, Paper, or Scissors:
+            if (playerSelection !== "Rock" &&
+                playerSelection !== "Paper" &&
+                playerSelection !== "Scissors") {
+                    // Return false
+                    return false;
+            }
+            // Otherwise:
+            else {
                 // Check if the player wins or not
                 // Return the results
                 if (checkIfPlayerWins(playerSelection,computerSelection)) {
@@ -81,14 +90,9 @@
                 else {
                     return `You lose! ${computerSelection} beats ${playerSelection}.`
                 }
-                
-            }
-            // If the player didn't play Rock, Paper, or Scissors:
-            // Return an "Invalid move" message    
-            else {
-                return `"${playerSelection}" isn't a valid move. Try "Rock," "Paper," or "Scissors."`
             }
         }
+
         
         // Create a game loop function
         function game() {
@@ -106,7 +110,7 @@
             // If the round is a tie
             if (playerChoice === computerChoice) { 
                 // Announce the tie
-                console.log(`${playerChoice} ties ${computerChoice}. Try again.`)
+                console.log(`${playerChoice} ties ${computerChoice}. Try again.`);
                 // Add nothing to the scoreboard and repeat.
             }
 
@@ -114,15 +118,25 @@
             else {
                 // Determine the winner
                 let playerWon = checkIfPlayerWins(playerChoice,computerChoice);
-                // Announce the results of the round
-                console.log(playRound(playerChoice,computerChoice));
-                // Add the results of the round to the total score
-                playerWon ? playerScore++ : computerScore++;
+                // Assign the results of the round to a variable
+                let roundResults = playRound(playerChoice,computerChoice);
+                // roundResults will be false if the player input an invalid move,
+                // and true otherwise.
+                
+                // If the round has results (wasn't invalid): 
+                if (roundResults) {
+                    // Add the results of the round to the total score
+                    playerWon ? playerScore++ : computerScore++;
+                    // Announce the results of the round
+                    console.log(playRound(playerChoice,computerChoice));
+                    // Announce game score
+                    console.log(`The score so far: Human ${playerScore}, Computer ${computerScore}.`);
+                }
+                else {
+                    console.log(`"${playerChoice}" is not a valid move. Try "Rock", "Paper", or "Scissors".`);
+                }
             }
             
-            
-            // Announce game score
-            console.log(`The score so far: Human ${playerScore}, Computer ${computerScore}.`)
             // Repeat for five rounds
             // After five rounds, announce the score and congratulate the winner
         }
