@@ -23,7 +23,7 @@
         // Create a function that takes in two RPS moves
         // If move 1 beats move 2, return true
         // If move 2 beats move 1, return false
-        function selectWinner(move1, move2){
+        function checkIfPlayerWins(move1, move2){
             // If move 1 is Rock:
             // Scissors returns True, paper returns false
             if (move1 === "Rock") {
@@ -67,21 +67,27 @@
             if (playerSelection === computerSelection) {
                 // If it's a tie:
                 // Return "It's a tie!" message
-                return "It's a tie!"
+                return `${playerSelection} ties ${computerSelection}. Try again.`
             }
             // If not a tie:
             // Make sure that player has provided a valid input
             else if (playerSelection === "Rock" ||
                     playerSelection === "Paper" ||
                     playerSelection === "Scissors") {
-                // Judge what the winning move is
+                // Check if the player wins or not
                 // Return the results
-                return "Valid."
+                if (checkIfPlayerWins(playerSelection,computerSelection)) {
+                    return `You win! ${playerSelection} beats ${computerSelection}.`
+                }
+                else {
+                    return `You lose! ${computerSelection} beats ${playerSelection}.`
+                }
+                
             }
             // If the player didn't play Rock, Paper, or Scissors:
             // Return an "Invalid move" message    
             else {
-                return `"${playerSelection}"" isn't a valid move. Try "Rock," "Paper," or "Scissors."`
+                return `"${playerSelection}" isn't a valid move. Try "Rock," "Paper," or "Scissors."`
             }
         }
     </script>
