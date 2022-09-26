@@ -69,13 +69,6 @@
         function playRound(playerSelection, computerSelection) {
             // Clean up player input
             playerSelection = cleanUpInput(playerSelection);
-            // Check if the round is a tie
-            if (playerSelection === computerSelection) {
-                // If it's a tie:
-                // Return "It's a tie!" message
-                return `${playerSelection} ties ${computerSelection}. Try again.`
-            }
-            // If not a tie:
             // Make sure that player has provided a valid input
             else if (playerSelection === "Rock" ||
                     playerSelection === "Paper" ||
@@ -109,19 +102,23 @@
             // Generate the computer's choice
             let computerChoice = getComputerChoice();
             // Judge the the round
-            if (playerChoice === computerChoice) { // If the round is a tie
+
+            // If the round is a tie
+            if (playerChoice === computerChoice) { 
                 // Announce the tie
                 console.log(`${playerChoice} ties ${computerChoice}. Try again.`)
                 // Add nothing to the scoreboard and repeat.
             }
-            else { // If the round isn't a tie:
+
+            // If the round isn't a tie:
+            else {
                 // Determine the winner
                 let playerWon = checkIfPlayerWins(playerChoice,computerChoice);
                 // Announce the results of the round
                 console.log(playRound(playerChoice,computerChoice));
                 // Add the results of the round to the total score
                 playerWon ? playerScore++ : computerScore++;
-                }
+            }
             
             
             // Announce game score
