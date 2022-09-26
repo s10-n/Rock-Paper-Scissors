@@ -91,41 +91,46 @@ function game() {
     let computerScore = 0;
     // Announce that the game has started
     console.log("Welcome to Rock Paper Scissors!");
-    // Prompt the player for their move
-    let playerChoice = prompt("What's your move?");
-    // Generate the computer's choice
-    let computerChoice = getComputerChoice();
-    // Judge the the round
+    // Check if the game is over
+    while (playerScore < 5 && computerScore < 5) {
+        // For each round:
+        // Prompt the player for their move
+        let playerChoice = prompt("What's your move?");
+        // Generate the computer's choice
+        let computerChoice = getComputerChoice();
+        // Judge the the round
 
-    // If the round is a tie
-    if (playerChoice === computerChoice) { 
-        // Announce the tie
-        console.log(`${playerChoice} ties ${computerChoice}. Try again.`);
-        // Add nothing to the scoreboard and repeat.
-    }
-
-    // If the round isn't a tie:
-    else {
-        // Determine the winner
-        let playerWon = checkIfPlayerWins(playerChoice,computerChoice);
-        // Assign the results of the round to a variable
-        let roundResults = playRound(playerChoice,computerChoice);
-        // roundResults will be false if the player input an invalid move,
-        // and true otherwise.
-        
-        // If the round has results (wasn't invalid): 
-        if (roundResults) {
-            // Add the results of the round to the total score
-            playerWon ? playerScore++ : computerScore++;
-            // Announce the results of the round
-            console.log(playRound(playerChoice,computerChoice));
-            // Announce game score
-            console.log(`The score so far: Human ${playerScore}, Computer ${computerScore}.`);
+        // If the round is a tie
+        if (playerChoice === computerChoice) { 
+            // Announce the tie
+            console.log(`${playerChoice} ties ${computerChoice}. Try again.`);
+            // Add nothing to the scoreboard and repeat.
         }
+
+        // If the round isn't a tie:
         else {
-            console.log(`"${playerChoice}" is not a valid move. Try "Rock", "Paper", or "Scissors".`);
+            // Determine the winner
+            let playerWon = checkIfPlayerWins(playerChoice,computerChoice);
+            // Assign the results of the round to a variable
+            let roundResults = playRound(playerChoice,computerChoice);
+            // roundResults will be false if the player input an invalid move,
+            // and true otherwise.
+            
+            // If the round has results (wasn't invalid): 
+            if (roundResults) {
+                // Add the results of the round to the total score
+                playerWon ? playerScore++ : computerScore++;
+                // Announce the results of the round
+                console.log(playRound(playerChoice,computerChoice));
+                // Announce game score
+                console.log(`The score so far: Human ${playerScore}, Computer ${computerScore}.`);
+            }
+            else {
+                console.log(`"${playerChoice}" is not a valid move. Try "Rock", "Paper", or "Scissors".`);
+            }
         }
     }
+    
     
     // Repeat for five rounds
     // After five rounds, announce the score and congratulate the winner
