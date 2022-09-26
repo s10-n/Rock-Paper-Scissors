@@ -13,8 +13,10 @@
         function getComputerChoice() {
             // Have an array containing Rock, paper, and scissors
             let moveList = ["Rock","Paper","Scissors"];
-            // Select a random number between zero and three 
+            // Select a random number between zero and three
+            let moveNumber = Math.floor(Math.random() * moveList.length);
             // Return the list item with the index of the random number
+            return moveNumber;
         }
     </script>
 </body>
