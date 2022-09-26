@@ -135,5 +135,10 @@ function game() {
         }
     }
     // After five rounds, announce the score and congratulate the winner
-    console.log('Game over');
+    if (playerScore > computerScore) {
+        console.log("Congratulations, you win!");
+    }
+    else {
+        console.log("You lose! How dare you challenge a perfect, immortal machine like me?");
+    }
 }
