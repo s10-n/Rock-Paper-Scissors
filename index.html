@@ -93,9 +93,16 @@
         
         // Create a game loop function
         function game() {
+            // Set the player scores to 0
+            let playerScore = 0;
+            let computerScore = 0;
             // Announce that the game has started
+            console.log("Welcome to Rock Paper Scissors!");
             // Prompt the player for their move
-            // Announce the result and the game score
+            // Announce the result of the round
+            console.log(playRound(prompt("What's your move?"),getComputerChoice()));
+            // Announce game score
+            console.log(`The score so far: Human ${playerScore}, Computer ${computerScore}.`)
             // Repeat for five rounds
             // After five rounds, announce the score and congratulate the winner
         }
