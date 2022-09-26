@@ -25,14 +25,19 @@
             // Clean up player input
             playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
             // Make sure that player has provided a valid input
-            
-            // If valid:
-            // Select computer choice
-            // Judge what the winning move is
-            // Return the results
+            if (playerSelection === "Rock" ||
+                playerSelection === "Paper" ||
+                playerSelection === "Scissors") {
 
-            // If invalid:
-            // Return an "Invalid move" message
+                    // If valid:
+                    // Select computer choice
+                    // Judge what the winning move is
+                    // Return the results
+                }
+            else {
+                // If invalid:
+                // Return an "Invalid move" message
+            }
         }
     </script>
 </body>
