@@ -89,10 +89,12 @@ function game() {
     // Set the player scores to 0
     let playerScore = 0;
     let computerScore = 0;
+    // Set the round number to 0
+    let round = 0;
     // Announce that the game has started
     console.log("Welcome to Rock Paper Scissors!");
-    // Check if the game is over
-    while (playerScore < 5 && computerScore < 5) {
+    // Repeat for five rounds
+    while (round < 5) {
         // For each round:
         // Prompt the player for their move
         let playerChoice = prompt("What's your move?");
@@ -124,14 +126,14 @@ function game() {
                 console.log(playRound(playerChoice,computerChoice));
                 // Announce game score
                 console.log(`The score so far: Human ${playerScore}, Computer ${computerScore}.`);
+                // Add one to the round counter
+                round++;
             }
             else {
                 console.log(`"${playerChoice}" is not a valid move. Try "Rock", "Paper", or "Scissors".`);
             }
         }
     }
-    
-    
-    // Repeat for five rounds
     // After five rounds, announce the score and congratulate the winner
+    console.log('Game over');
 }
