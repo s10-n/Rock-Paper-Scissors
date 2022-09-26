@@ -55,7 +55,7 @@
                 }
             }
         }
-
+        
         // Create a function that plays a single round of Rock Paper Scissors
         // function takes a player selection and computer selection,
         // then returns a string declaring the winner and winning move
@@ -102,8 +102,22 @@
             let playerChoice = prompt("What's your move?");
             // Generate the computer's choice
             let computerChoice = getComputerChoice();
-            // Announce the result of the round
-            console.log(playRound(playerChoice,computerChoice));
+            // Judge the the round
+            if (playerChoice === computerChoice) { // If the round is a tie
+                // Announce the tie
+                console.log(`${playerChoice} ties ${computerChoice}. Try again.`)
+                // Add nothing to the scoreboard and repeat.
+            }
+            else { // If the round isn't a tie:
+                // Determine the winner
+                let playerWon = checkIfPlayerWins(playerChoice,computerChoice);
+                // Announce the results of the round
+                console.log(playRound(playerChoice,computerChoice));
+                // Add the results of the round to the total score
+                playerWon ? playerScore++ : computerScore++;
+                }
+            
+            
             // Announce game score
             console.log(`The score so far: Human ${playerScore}, Computer ${computerScore}.`)
             // Repeat for five rounds
