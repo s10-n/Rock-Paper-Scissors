@@ -99,8 +99,11 @@
             // Announce that the game has started
             console.log("Welcome to Rock Paper Scissors!");
             // Prompt the player for their move
+            let playerChoice = prompt("What's your move?");
+            // Generate the computer's choice
+            let computerChoice = getComputerChoice();
             // Announce the result of the round
-            console.log(playRound(prompt("What's your move?"),getComputerChoice()));
+            console.log(playRound(playerChoice,computerChoice));
             // Announce game score
             console.log(`The score so far: Human ${playerScore}, Computer ${computerScore}.`)
             // Repeat for five rounds
