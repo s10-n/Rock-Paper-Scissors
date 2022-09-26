@@ -142,3 +142,5 @@ function game() {
         console.log("You lose! How dare you challenge a perfect, immortal machine like me?");
     }
 }
+
+game()
