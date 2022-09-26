@@ -10,6 +10,7 @@
     <script>
         // Create a function that randomly returns "Rock", "Paper", or "Scissors"
         // Function requires no output and will return a string
+
         function getComputerChoice() {
             // Have an array containing Rock, paper, and scissors
             let moveList = ["Rock","Paper","Scissors"];
@@ -18,9 +19,18 @@
             // Return the list item with the index of the random number
             return moveList[moveNumber];
         }
+
+        // Create a function that takes in two RPS moves
+        // If move 1 beats move 2, return true
+        // If move 2 beats move 1, return false
+        function selectWinner(move1, move2){
+
+}
+
         // Create a function that plays a single round of Rock Paper Scissors
         // function takes a player selection and computer selection,
         // then returns a string declaring the winner and winning move
+
         function playRound(playerSelection, computerSelection) {
             // Clean up player input
             playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
@@ -28,9 +38,8 @@
             if (playerSelection === "Rock" ||
                 playerSelection === "Paper" ||
                 playerSelection === "Scissors") {
-
                     // If valid:
-                    // Select computer choice
+                                        
                     // Judge what the winning move is
                     // Return the results
                 }
