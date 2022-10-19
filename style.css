@@ -1,0 +1,17 @@
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.page-title, .scoreboard, .message {
+    text-align: center;
+}
+
+.ui-container {
+    
+}
+
+button {
+    padding:10px;
+    margin:10px;
+}
